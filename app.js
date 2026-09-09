@@ -3,7 +3,7 @@
   Set API_URL to the deployed Google Apps Script Web App URL for shared data.
   If API_URL is empty, the app uses localStorage (same-device demo mode).
 */
-const API_URL = ""; // <-- hier die Apps-Script-Web-App-URL eintragen
+const API_URL = "https://script.google.com/macros/s/AKfycbyo-Lg5bRG_bkaGpbrHTO4cMqM5HAjmlMt4pWpizNN7AYm2IY9xpkIUcEX93mjcGjuM/exec"; // <-- hier die Apps-Script-Web-App-URL eintragen
 
 const state={feedback:[],infos:[],polls:[],votes:{},loading:false};
 let edit={type:null,id:null};
