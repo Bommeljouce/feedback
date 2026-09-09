@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Feedback & Abstimmungen</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Projektboard</h1>
+      <p>Feedback · Infos · Abstimmungen</p>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Bereiche">
+    <button class="tab active" data-tab="feedback">Feedback</button>
+    <button class="tab" data-tab="infos">Allgemeine Infos</button>
+    <button class="tab" data-tab="polls">Abstimmungen</button>
+  </nav>
+
+  <main>
+    <section id="feedback" class="panel active">
+      <div class="section-head">
+        <div>
+          <h2>Feedback</h2>
+          <p>Feedback wird anonym veröffentlicht und kann nicht bearbeitet werden.</p>
+        </div>
+        <button class="primary" id="newFeedback">+ Feedback</button>
+      </div>
+      <div id="feedbackList" class="stack"></div>
+      <div id="feedbackEmpty" class="empty">Noch kein Feedback vorhanden.</div>
+    </section>
+
+    <section id="infos" class="panel">
+      <div class="section-head">
+        <div>
+          <h2>Allgemeine Infos</h2>
+          <p>Beiträge können bearbeitet und gelöscht werden.</p>
+        </div>
+        <button class="primary" id="newInfo">+ Info</button>
+      </div>
+      <div id="infoList" class="stack"></div>
+      <div id="infoEmpty" class="empty">Noch keine Infos vorhanden.</div>
+    </section>
+
+    <section id="polls" class="panel">
+      <div class="section-head">
+        <div>
+          <h2>Abstimmungen</h2>
+          <p>Name ist erforderlich. Single- oder Multiple-Choice.</p>
+        </div>
+        <button class="primary" id="newPoll">+ Abstimmung</button>
+      </div>
+      <div id="pollList" class="stack"></div>
+      <div id="pollEmpty" class="empty">Noch keine Abstimmungen vorhanden.</div>
+    </section>
+  </main>
+
+  <dialog id="editor">
+    <form method="dialog" id="editorForm">
+      <div class="modal-head">
+        <h3 id="editorTitle">Erstellen</h3>
+        <button class="icon-btn" value="cancel" aria-label="Schließen">×</button>
+      </div>
+      <div id="editorFields"></div>
+      <div class="modal-actions">
+        <button class="secondary" value="cancel">Abbrechen</button>
+        <button class="primary" id="saveBtn" value="default">Speichern</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="confirmDialog">
+    <form method="dialog">
+      <h3 id="confirmTitle">Wirklich löschen?</h3>
+      <p id="confirmText">Diese Aktion kann nicht rückgängig gemacht werden.</p>
+      <div class="modal-actions">
+        <button class="secondary" value="cancel">Abbrechen</button>
+        <button class="danger" id="confirmDelete" value="default">Löschen</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
